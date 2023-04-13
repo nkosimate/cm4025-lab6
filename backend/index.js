@@ -8,6 +8,15 @@ import authRoutes from './auth.routes.js'
 
 var app = express();
 
+var options = {
+    index: "index.html"
+  };
+
+var dir = path.join(__dirname, '../login-frontend/build/');
+
+app.use(express.static(dir, options));
+
+
 const PORT = config.port;
 const MONGOURI = config.mongoUri;
 
